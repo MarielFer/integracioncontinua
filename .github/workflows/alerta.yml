@@ -1,15 +1,15 @@
 name: Notificacion DevOps
 
 on:
- push:
-  branches:
-   -main
+  push:
+    branches:
+      - main
 
 jobs:
- notificar:
-  runs-on: ubuntu-lastest
-  steps:
-   - name: Enviar notificacion a ntfy.sh
-     run: |
-       curl -d "Se ha subido nuevo codigo al repositorio 'integracion continua' " ntfy.sh/devops-itla
+  notificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar notificacion a ntfy.sh
+        run: |
+          curl -d "Se ha subido nuevo codigo al repositorio 'integracion continua'" https://ntfy.sh/devops-itla
 
